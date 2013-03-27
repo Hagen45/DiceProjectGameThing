@@ -1,0 +1,279 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D72ABF7114ED1012004C4BAF /* libcyclone-physics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D72ABF6D14ED0E9D004C4BAF /* libcyclone-physics.a */; };
+		D72ABF8614ED1104004C4BAF /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D72ABF8214ED10F3004C4BAF /* GLUT.framework */; };
+		D72ABF8714ED1107004C4BAF /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D72ABF8314ED10F3004C4BAF /* OpenGL.framework */; };
+		D7CD10CA14F6796700A2040B /* app.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7CD10C314F6796700A2040B /* app.cpp */; };
+		D7CD10CB14F6796700A2040B /* hangman.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7CD10C614F6796700A2040B /* hangman.cpp */; };
+		D7CD10CC14F6796700A2040B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7CD10C714F6796700A2040B /* main.cpp */; };
+		D7CD10CD14F6796700A2040B /* timing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7CD10C814F6796700A2040B /* timing.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D72ABF6C14ED0E9D004C4BAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D72ABF4114ED0ADD004C4BAF /* cyclone-physics.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D72ABF6714ED0E2D004C4BAF;
+			remoteInfo = "cyclone-physics";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D72ABF1F14ED088D004C4BAF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D72ABF2114ED088D004C4BAF /* cyclone-hangman-demo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "cyclone-hangman-demo"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D72ABF4114ED0ADD004C4BAF /* cyclone-physics.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "cyclone-physics.xcodeproj"; sourceTree = "<group>"; };
+		D72ABF8214ED10F3004C4BAF /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		D72ABF8314ED10F3004C4BAF /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		D7CD10C314F6796700A2040B /* app.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = app.cpp; sourceTree = "<group>"; };
+		D7CD10C414F6796700A2040B /* app.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = app.h; sourceTree = "<group>"; };
+		D7CD10C614F6796700A2040B /* hangman.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hangman.cpp; sourceTree = "<group>"; };
+		D7CD10C714F6796700A2040B /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		D7CD10C814F6796700A2040B /* timing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = timing.cpp; sourceTree = "<group>"; };
+		D7CD10C914F6796700A2040B /* timing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timing.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D72ABF1E14ED088D004C4BAF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D72ABF7114ED1012004C4BAF /* libcyclone-physics.a in Frameworks */,
+				D72ABF8614ED1104004C4BAF /* GLUT.framework in Frameworks */,
+				D72ABF8714ED1107004C4BAF /* OpenGL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D72ABF1614ED088D004C4BAF = {
+			isa = PBXGroup;
+			children = (
+				D7CD10C214F6796700A2040B /* cyclone-hangman-demo */,
+				D72ABF8114ED10F3004C4BAF /* Frameworks */,
+				D72ABF4114ED0ADD004C4BAF /* cyclone-physics.xcodeproj */,
+				D72ABF2214ED088D004C4BAF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D72ABF2214ED088D004C4BAF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D72ABF2114ED088D004C4BAF /* cyclone-hangman-demo */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D72ABF4214ED0ADD004C4BAF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D72ABF6D14ED0E9D004C4BAF /* libcyclone-physics.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D72ABF8114ED10F3004C4BAF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D72ABF8214ED10F3004C4BAF /* GLUT.framework */,
+				D72ABF8314ED10F3004C4BAF /* OpenGL.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D7CD10C214F6796700A2040B /* cyclone-hangman-demo */ = {
+			isa = PBXGroup;
+			children = (
+				D7CD10C314F6796700A2040B /* app.cpp */,
+				D7CD10C414F6796700A2040B /* app.h */,
+				D7CD10C614F6796700A2040B /* hangman.cpp */,
+				D7CD10C714F6796700A2040B /* main.cpp */,
+				D7CD10C814F6796700A2040B /* timing.cpp */,
+				D7CD10C914F6796700A2040B /* timing.h */,
+			);
+			path = "cyclone-hangman-demo";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D72ABF2014ED088D004C4BAF /* cyclone-hangman-demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D72ABF2B14ED088D004C4BAF /* Build configuration list for PBXNativeTarget "cyclone-hangman-demo" */;
+			buildPhases = (
+				D72ABF1D14ED088D004C4BAF /* Sources */,
+				D72ABF1E14ED088D004C4BAF /* Frameworks */,
+				D72ABF1F14ED088D004C4BAF /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "cyclone-hangman-demo";
+			productName = "cyclone-bridge-demo";
+			productReference = D72ABF2114ED088D004C4BAF /* cyclone-hangman-demo */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D72ABF1814ED088D004C4BAF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = D72ABF1B14ED088D004C4BAF /* Build configuration list for PBXProject "cyclone-hangman-demo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D72ABF1614ED088D004C4BAF;
+			productRefGroup = D72ABF2214ED088D004C4BAF /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = D72ABF4214ED0ADD004C4BAF /* Products */;
+					ProjectRef = D72ABF4114ED0ADD004C4BAF /* cyclone-physics.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				D72ABF2014ED088D004C4BAF /* cyclone-hangman-demo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		D72ABF6D14ED0E9D004C4BAF /* libcyclone-physics.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libcyclone-physics.a";
+			remoteRef = D72ABF6C14ED0E9D004C4BAF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D72ABF1D14ED088D004C4BAF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7CD10CA14F6796700A2040B /* app.cpp in Sources */,
+				D7CD10CB14F6796700A2040B /* hangman.cpp in Sources */,
+				D7CD10CC14F6796700A2040B /* main.cpp in Sources */,
+				D7CD10CD14F6796700A2040B /* timing.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D72ABF2914ED088D004C4BAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		D72ABF2A14ED088D004C4BAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		D72ABF2C14ED088D004C4BAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = ../include;
+				PRODUCT_NAME = "cyclone-hangman-demo";
+			};
+			name = Debug;
+		};
+		D72ABF2D14ED088D004C4BAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = ../include;
+				PRODUCT_NAME = "cyclone-hangman-demo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D72ABF1B14ED088D004C4BAF /* Build configuration list for PBXProject "cyclone-hangman-demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D72ABF2914ED088D004C4BAF /* Debug */,
+				D72ABF2A14ED088D004C4BAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D72ABF2B14ED088D004C4BAF /* Build configuration list for PBXNativeTarget "cyclone-hangman-demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D72ABF2C14ED088D004C4BAF /* Debug */,
+				D72ABF2D14ED088D004C4BAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D72ABF1814ED088D004C4BAF /* Project object */;
+}

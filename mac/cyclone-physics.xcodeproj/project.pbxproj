@@ -1,0 +1,261 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D72ABF7214ED10B4004C4BAF /* body.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7B6588014DACA470073D592 /* body.cpp */; };
+		D72ABF7314ED10B4004C4BAF /* collide_coarse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7B6588114DACA470073D592 /* collide_coarse.cpp */; };
+		D72ABF7414ED10B4004C4BAF /* collide_fine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7B6588214DACA470073D592 /* collide_fine.cpp */; };
+		D72ABF7514ED10B4004C4BAF /* contacts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7B6588314DACA470073D592 /* contacts.cpp */; };
+		D72ABF7614ED10B4004C4BAF /* core.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7B6588414DACA470073D592 /* core.cpp */; };
+		D72ABF7714ED10B4004C4BAF /* fgen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7B658A114DACA470073D592 /* fgen.cpp */; };
+		D72ABF7814ED10B4004C4BAF /* joints.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7B658A214DACA470073D592 /* joints.cpp */; };
+		D72ABF7914ED10B4004C4BAF /* particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7B658A314DACA470073D592 /* particle.cpp */; };
+		D72ABF7A14ED10B4004C4BAF /* pcontacts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7B658A414DACA470073D592 /* pcontacts.cpp */; };
+		D72ABF7B14ED10B4004C4BAF /* pfgen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7B658A514DACA470073D592 /* pfgen.cpp */; };
+		D72ABF7C14ED10B4004C4BAF /* plinks.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7B658A614DACA470073D592 /* plinks.cpp */; };
+		D72ABF7D14ED10B4004C4BAF /* pworld.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7B658A714DACA470073D592 /* pworld.cpp */; };
+		D72ABF7E14ED10B4004C4BAF /* random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7B658A814DACA470073D592 /* random.cpp */; };
+		D72ABF7F14ED10B4004C4BAF /* world.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7B658A914DACA470073D592 /* world.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D72ABF6714ED0E2D004C4BAF /* libcyclone-physics.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libcyclone-physics.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7B6588014DACA470073D592 /* body.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = body.cpp; path = ../../src/body.cpp; sourceTree = "<group>"; };
+		D7B6588114DACA470073D592 /* collide_coarse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = collide_coarse.cpp; path = ../../src/collide_coarse.cpp; sourceTree = "<group>"; };
+		D7B6588214DACA470073D592 /* collide_fine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = collide_fine.cpp; path = ../../src/collide_fine.cpp; sourceTree = "<group>"; };
+		D7B6588314DACA470073D592 /* contacts.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = contacts.cpp; path = ../../src/contacts.cpp; sourceTree = "<group>"; };
+		D7B6588414DACA470073D592 /* core.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = core.cpp; path = ../../src/core.cpp; sourceTree = "<group>"; };
+		D7B658A114DACA470073D592 /* fgen.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = fgen.cpp; path = ../../src/fgen.cpp; sourceTree = "<group>"; };
+		D7B658A214DACA470073D592 /* joints.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = joints.cpp; path = ../../src/joints.cpp; sourceTree = "<group>"; };
+		D7B658A314DACA470073D592 /* particle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = particle.cpp; path = ../../src/particle.cpp; sourceTree = "<group>"; };
+		D7B658A414DACA470073D592 /* pcontacts.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = pcontacts.cpp; path = ../../src/pcontacts.cpp; sourceTree = "<group>"; };
+		D7B658A514DACA470073D592 /* pfgen.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = pfgen.cpp; path = ../../src/pfgen.cpp; sourceTree = "<group>"; };
+		D7B658A614DACA470073D592 /* plinks.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = plinks.cpp; path = ../../src/plinks.cpp; sourceTree = "<group>"; };
+		D7B658A714DACA470073D592 /* pworld.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = pworld.cpp; path = ../../src/pworld.cpp; sourceTree = "<group>"; };
+		D7B658A814DACA470073D592 /* random.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = random.cpp; path = ../../src/random.cpp; sourceTree = "<group>"; };
+		D7B658A914DACA470073D592 /* world.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = world.cpp; path = ../../src/world.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D72ABF6414ED0E2D004C4BAF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D7B6586314DAC9EF0073D592 = {
+			isa = PBXGroup;
+			children = (
+				D7B6587114DAC9EF0073D592 /* Source */,
+				D7B6586F14DAC9EF0073D592 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D7B6586F14DAC9EF0073D592 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D72ABF6714ED0E2D004C4BAF /* libcyclone-physics.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D7B6587114DAC9EF0073D592 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				D7B6588014DACA470073D592 /* body.cpp */,
+				D7B6588114DACA470073D592 /* collide_coarse.cpp */,
+				D7B6588214DACA470073D592 /* collide_fine.cpp */,
+				D7B6588314DACA470073D592 /* contacts.cpp */,
+				D7B6588414DACA470073D592 /* core.cpp */,
+				D7B658A114DACA470073D592 /* fgen.cpp */,
+				D7B658A214DACA470073D592 /* joints.cpp */,
+				D7B658A314DACA470073D592 /* particle.cpp */,
+				D7B658A414DACA470073D592 /* pcontacts.cpp */,
+				D7B658A514DACA470073D592 /* pfgen.cpp */,
+				D7B658A614DACA470073D592 /* plinks.cpp */,
+				D7B658A714DACA470073D592 /* pworld.cpp */,
+				D7B658A814DACA470073D592 /* random.cpp */,
+				D7B658A914DACA470073D592 /* world.cpp */,
+			);
+			name = Source;
+			path = "cyclone-physics";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D72ABF6514ED0E2D004C4BAF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D72ABF6614ED0E2D004C4BAF /* cyclone-physics */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D72ABF6814ED0E2D004C4BAF /* Build configuration list for PBXNativeTarget "cyclone-physics" */;
+			buildPhases = (
+				D72ABF6314ED0E2D004C4BAF /* Sources */,
+				D72ABF6414ED0E2D004C4BAF /* Frameworks */,
+				D72ABF6514ED0E2D004C4BAF /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "cyclone-physics";
+			productName = "cyclone-physics";
+			productReference = D72ABF6714ED0E2D004C4BAF /* libcyclone-physics.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D7B6586514DAC9EF0073D592 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = D7B6586814DAC9EF0073D592 /* Build configuration list for PBXProject "cyclone-physics" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D7B6586314DAC9EF0073D592;
+			productRefGroup = D7B6586F14DAC9EF0073D592 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D72ABF6614ED0E2D004C4BAF /* cyclone-physics */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D72ABF6314ED0E2D004C4BAF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D72ABF7214ED10B4004C4BAF /* body.cpp in Sources */,
+				D72ABF7314ED10B4004C4BAF /* collide_coarse.cpp in Sources */,
+				D72ABF7414ED10B4004C4BAF /* collide_fine.cpp in Sources */,
+				D72ABF7514ED10B4004C4BAF /* contacts.cpp in Sources */,
+				D72ABF7614ED10B4004C4BAF /* core.cpp in Sources */,
+				D72ABF7714ED10B4004C4BAF /* fgen.cpp in Sources */,
+				D72ABF7814ED10B4004C4BAF /* joints.cpp in Sources */,
+				D72ABF7914ED10B4004C4BAF /* particle.cpp in Sources */,
+				D72ABF7A14ED10B4004C4BAF /* pcontacts.cpp in Sources */,
+				D72ABF7B14ED10B4004C4BAF /* pfgen.cpp in Sources */,
+				D72ABF7C14ED10B4004C4BAF /* plinks.cpp in Sources */,
+				D72ABF7D14ED10B4004C4BAF /* pworld.cpp in Sources */,
+				D72ABF7E14ED10B4004C4BAF /* random.cpp in Sources */,
+				D72ABF7F14ED10B4004C4BAF /* world.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D72ABF6914ED0E2D004C4BAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D72ABF6A14ED0E2D004C4BAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D7B6587614DAC9EF0073D592 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = ../include;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		D7B6587714DAC9EF0073D592 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = ../include;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D72ABF6814ED0E2D004C4BAF /* Build configuration list for PBXNativeTarget "cyclone-physics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D72ABF6914ED0E2D004C4BAF /* Debug */,
+				D72ABF6A14ED0E2D004C4BAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D7B6586814DAC9EF0073D592 /* Build configuration list for PBXProject "cyclone-physics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7B6587614DAC9EF0073D592 /* Debug */,
+				D7B6587714DAC9EF0073D592 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D7B6586514DAC9EF0073D592 /* Project object */;
+}

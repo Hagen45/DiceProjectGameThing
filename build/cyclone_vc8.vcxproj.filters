@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{419e8d7d-c2b6-4ffb-bc32-0e8140de8d40}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{b213a823-6f13-435a-8c54-ca5d066b8cf9}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Header Files\cyclone">
+      <UniqueIdentifier>{55bb8d9d-d6e9-4a40-8e24-810ec36d4632}</UniqueIdentifier>
+      <Extensions>.h</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\body.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\collide_coarse.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\collide_fine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\contacts.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\core.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\fgen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\joints.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\particle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\pcontacts.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\pfgen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\plinks.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\pworld.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\random.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\world.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\cyclone\body.h">
+      <Filter>Header Files\cyclone</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\cyclone\collide_coarse.h">
+      <Filter>Header Files\cyclone</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\cyclone\collide_fine.h">
+      <Filter>Header Files\cyclone</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\cyclone\contacts.h">
+      <Filter>Header Files\cyclone</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\cyclone\core.h">
+      <Filter>Header Files\cyclone</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\cyclone\cyclone.h">
+      <Filter>Header Files\cyclone</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\cyclone\fgen.h">
+      <Filter>Header Files\cyclone</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\cyclone\joints.h">
+      <Filter>Header Files\cyclone</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\cyclone\particle.h">
+      <Filter>Header Files\cyclone</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\cyclone\pcontacts.h">
+      <Filter>Header Files\cyclone</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\cyclone\pfgen.h">
+      <Filter>Header Files\cyclone</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\cyclone\plinks.h">
+      <Filter>Header Files\cyclone</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\cyclone\precision.h">
+      <Filter>Header Files\cyclone</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\cyclone\pworld.h">
+      <Filter>Header Files\cyclone</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\cyclone\random.h">
+      <Filter>Header Files\cyclone</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\cyclone\world.h">
+      <Filter>Header Files\cyclone</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

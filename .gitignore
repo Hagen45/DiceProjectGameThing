@@ -1,13 +1,21 @@
-# Compiled Object files
-*.slo
-*.lo
-*.o
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
+*.exe
+*.ilk
+*.user
+*.opensdf
+*.suo
+*.ipch
+*.obj
+*.sbr
+*.tlog
+*.log
+*.idb
+*.pdb
+*.user
+build/advanced_physics.vcxproj.user
+*.sdf
+[Dd]ebug*/
+/lib/cyclone.lib
+/lib/cyclone_d.lib
+/lib/cyclone.bsc
+/tmp
