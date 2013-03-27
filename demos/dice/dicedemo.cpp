@@ -542,12 +542,8 @@ void DiceDemo::Display( void )
     glLightfv( GL_LIGHT0, GL_POSITION, lightPosition );
     glColorMaterial( GL_FRONT_AND_BACK, GL_DIFFUSE );
     glEnable( GL_COLOR_MATERIAL );
-    glColor3f( 1.0, 1.0, 1.0 );
-    
-    if( s_Wireframe )
-    {
-        glPolygonMode( GL_FRONT_AND_BACK, GL_LINE );
-    }
+    glColor3f( 0.70, 0.75, 0.70 );
+   
 
     for( it = this->m_Dices.begin() ; it != this->m_Dices.end() ; ++it )
     {
