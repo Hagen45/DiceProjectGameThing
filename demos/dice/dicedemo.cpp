@@ -60,10 +60,15 @@ protected:
 
 private: 
 	cyclone::Vector3 lastPosition; 
-	bool getsDragged; 
+	
 
 public:
     cyclone::CollisionSphere *RoundingSphere;
+	bool getsDragged; 
+	cyclone::Vector3 oldPosition;
+	cyclone::Vector3 newPosition;
+
+
 
     Dice( void )
     {
@@ -82,12 +87,40 @@ public:
         delete this->RoundingSphere;
     }
 
-	virtual void isGettingDragged() { 
-		this->getsDragged = true; 
+	virtual void isGettingDragged(bool state) { 
+		this->getsDragged = state; 
 	}
 
-	virtual void notDragging() { 
-			this->getsDragged = false; 
+	virtual cyclone::Vector3 getOldPosition(){
+		return oldPosition;
+	}
+
+	virtual cyclone::Vector3 getNewPosition(){
+		return newPosition;
+	}
+	
+	virtual void setOldPosition(cyclone::Vector3 pos){
+		oldPosition=pos;
+	}
+
+	virtual void setNewPosition(cyclone::Vector3 pos){
+		setOldPosition(getNewPosition());
+		newPosition = pos;
+	}
+
+	virtual cyclone::Vector3 getFlingData(){
+		return getNewPosition()-getOldPosition();
+	}
+
+	virtual void fling(){
+		this->body->setVelocity((getNewPosition()*10)-(getOldPosition())*10);
+		resetPosition();
+		
+	}
+
+	virtual void resetPosition(){
+	cyclone::Vector3 oldPosition;
+	cyclone::Vector3 newPosition;
 	}
 
     virtual void render( void ) = 0;
@@ -166,6 +199,7 @@ public:
             this->body->setPosition( x, y, z );
             this->body->setOrientation( 1, 0, 0, 0 );
             this->body->setVelocity( 0, 0, 0 );
+			
             this->body->setRotation( cyclone::Vector3( 0.3f, 0.3f, 0.3f ) );
             this->halfSize = cyclone::Vector3( 1, 1, 1 );
 
@@ -523,7 +557,7 @@ void DiceDemo::Select( int x, int y )
 			{
 				cyclone::Vector3 pos = r.o + r.d * this->m_DragTime;
 				cyclone::Vector3 bpos = (*it)->body->getPosition();
-				(*it).isGettingDragged();
+				(*it)->isGettingDragged(true);
 
 				this->m_IsDragging = true;
 
@@ -552,6 +586,18 @@ void DiceDemo::Mouse( int button, int state, int x, int y )
 
 		if( this->m_DragJoint != NULL )
 		{
+			    std::list<Dice*>::const_iterator it;
+
+				for( it = this->m_Dices.begin() ; it != this->m_Dices.end() ; ++it )
+				{
+					if(((*it)->getsDragged)==true){
+						(*it)->isGettingDragged(false);
+						(*it)->fling();
+						std::cout << "Fling speed: " <<"("<<(*it)->getFlingData().x <<","<<(*it)->getFlingData().y << 
+							","<<(*it)->getFlingData().z<< ")"<< std::endl; 
+					}
+				}
+
 			delete this->m_DragJoint;
 			this->m_DragJoint = NULL;
 		}
@@ -624,7 +670,14 @@ void DiceDemo::UpdateObjects( cyclone::real duration )
 {
     std::list<Dice*>::const_iterator it;
     for( it = this->m_Dices.begin() ; it != this->m_Dices.end() ; ++it )
-    {
+    {	
+		if((*it)->getsDragged==true){
+	//		std::cout << "Fling speed: " <<"("<<(*it)->getFlingData().x <<","<<(*it)->getFlingData().y << 
+	//						","<<(*it)->getFlingData().z<< ")"<< std::endl; 
+	
+			std::cout << "mousepos: " << (*it)->getNewPosition().x << ", " << (*it)->getNewPosition().y << ", " << (*it)->getNewPosition().z << ", " << std::endl; 
+			(*it)->setNewPosition((*it)->body->getPosition());
+		}
         (*it)->Update( duration );
     }
 }
