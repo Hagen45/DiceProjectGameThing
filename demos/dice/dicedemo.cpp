@@ -18,9 +18,6 @@
 #define PICK_BUFFER_SIZE      256
 #define PICK_TOLERANCE        10
 
-static bool s_DebugDraw = false;
-static bool s_Wireframe = true;
-
 static int s_Dices = 0;
 
 Application* getApplication( void );
@@ -114,12 +111,6 @@ public:
         glPushMatrix();
             glMultMatrixf( mat );
             glPushMatrix();
-                if( s_DebugDraw )
-                {
-                    glScalef( halfSize.x * 2, halfSize.y * 2, halfSize.z * 2 );
-                    glutWireCube( 1.0 );
-                    glutWireSphere( this->RoundingSphere->radius, 30, 30 );
-                }
             glPopMatrix();
 
             glPushMatrix();
@@ -271,14 +262,6 @@ public:
 
         glPushMatrix();
             glMultMatrixf( mat );
-            glPushMatrix();
-                if( s_DebugDraw )
-                {
-                    glScalef( halfSize.x * 2, halfSize.y * 2, halfSize.z * 2 );
-                    glutWireCube( 1.0 );
-                    glutWireSphere( this->RoundingSphere->radius, 30, 30 );
-                }
-            glPopMatrix();
 
             glPushMatrix();
                 glScalef( halfSize.x, halfSize.y, halfSize.z );
@@ -384,8 +367,6 @@ public:
     
     // Display the world
     virtual void Display( void );
-    // Handle keypress
-    virtual void Key( unsigned char key );
     // Handles mouse actions
     virtual void Mouse( int button, int state, int x, int y );
     // Handles mouse drag
@@ -632,21 +613,6 @@ void DiceDemo::UpdateObjects( cyclone::real duration )
 void DiceDemo::Reset( void )
 {
 
-}
-
-void DiceDemo::Key( unsigned char key )
-{
-    switch( key )
-    {
-        case 'D': case 'd':
-            s_DebugDraw = !s_DebugDraw;
-            break;
-        case 'W': case 'w':
-            s_Wireframe = !s_Wireframe;
-            break;
-    }
-
-    RigidBodyApplication::Key( key );
 }
 
 Application* getApplication( void )
