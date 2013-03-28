@@ -371,7 +371,6 @@ private:
     cyclone::PointJoint *m_DragJoint;
     cyclone::Vector3 m_DragPoint;
     Dice *m_DragDice;
-	cyclone::CollisionBox m_Walls[4];
 	cyclone::real m_DragTime;
 
     unsigned int m_PickBuffer[PICK_BUFFER_SIZE];
@@ -414,53 +413,15 @@ DiceDemo::DiceDemo( void )
 	this->m_DragJoint = NULL;
 	this->m_DragDice = NULL;
 
-	for( int i = 0; i < 2; ++i )
+	for( int i = 0; i < 1; ++i )
 	{
 		this->m_Dices.push_back( d = new SixSidedDice() );
 		d->SetState( i, i*2, i );
 	}
-	for( int j = 0; j < 2; ++j )
+	for( int j = 0; j < 1; ++j )
 	{
 		this->m_Dices.push_back( d = new EightSidedDice() );
 		d->SetState( j, j*2, j );
-	}
-
-	// Create a few boxes to create an inner box.
-	// [0] left [1] right [2] front [3]back
-	cyclone::Vector3 wallV( 1, 3, 30 );
-	cyclone::Vector3 wallH( 30, 3, 1 );
-
-	m_Walls[0].halfSize = wallV;
-	m_Walls[1].halfSize = wallV;
-	m_Walls[2].halfSize = wallH;
-	m_Walls[3].halfSize = wallH;
-
-	for( unsigned int i = 0; i < 4; ++i )
-	{
-		m_Walls[i].body = new cyclone::RigidBody();
-	}
-
-	m_Walls[0].body->setPosition( m_Walls[0].body->getPointInWorldSpace( cyclone::Vector3( -15, 1.5, 0) ) );
-	m_Walls[1].body->setPosition( m_Walls[1].body->getPointInWorldSpace( cyclone::Vector3( 15, 1.5, 0) ) );
-	m_Walls[2].body->setPosition( m_Walls[2].body->getPointInWorldSpace( cyclone::Vector3( 0, 1.5, 15) ) );
-	m_Walls[3].body->setPosition( m_Walls[3].body->getPointInWorldSpace( cyclone::Vector3( 0, 1.5, -15) ) );
-
-	for( unsigned int i = 0 ; i < 4 ; ++i )
-	{
-		m_Walls[i].body->setMass( 100.0f );
-		
-		cyclone::Matrix3 tensor;
-        tensor.setBlockInertiaTensor( m_Walls[i].halfSize, 100.0f );
-        m_Walls[i].body->setInertiaTensor( tensor );
-
-        m_Walls[i].body->setDamping( 1.0, 1.0 );
-        m_Walls[i].body->clearAccumulators();
-     
-		m_Walls[i].body->setAcceleration( 0, 0, 0 );
-		m_Walls[i].body->setCanSleep( true );
-        m_Walls[i].body->setAwake();
-
-		m_Walls[i].body->calculateDerivedData();
 	}
 }
 
@@ -500,29 +461,6 @@ void DiceDemo::Display( void )
         glVertex3f( 0, 0, -20 );
         glVertex3f( 0, 0, 20 );
     glEnd();
-
-	// Draw a box
-	glColor4f( 0.0f, 0.0f, 0.0f, 0.0f );
-	for(unsigned int i = 0; i < 4; ++i)
-	{
-	    GLfloat mat[16];
-        m_Walls[i].body->getGLTransform( mat );
-        glPushMatrix();
-            glMultMatrixf( mat );
-            glPushMatrix();
-                if( s_DebugDraw )
-                {
-					glScalef( m_Walls[i].halfSize.x * 2, m_Walls[i].halfSize.y * 2, m_Walls[i].halfSize.z * 2 );
-                    glutWireCube( 1.0 );
-                }
-            glPopMatrix();
-
-			glPushMatrix();
-                glScalef( m_Walls[i].halfSize.x, m_Walls[i].halfSize.y, m_Walls[i].halfSize.z );
-				glutSolidCube(0.0f);
-            glPopMatrix();
-        glPopMatrix();
-	}
 
     // Render each shadow in turn
     glEnable( GL_BLEND );
