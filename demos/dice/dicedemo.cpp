@@ -11,6 +11,7 @@
 #include <list>
 #include <stdio.h>
 #include <cassert>
+#include <iostream>
 
 #define DICE_ROUNDING_FACTOR 0.75
 
@@ -56,6 +57,11 @@ class Dice : public cyclone::CollisionBox
 {
 protected:
     GLint m_Name;
+
+private: 
+	cyclone::Vector3 lastPosition; 
+	bool getsDragged; 
+
 public:
     cyclone::CollisionSphere *RoundingSphere;
 
@@ -66,6 +72,7 @@ public:
 
         this->RoundingSphere = new cyclone::CollisionSphere();
         this->RoundingSphere->body = new cyclone::RigidBody();
+		this->getsDragged = false; 
     }
 
     virtual ~Dice( void )
@@ -74,6 +81,14 @@ public:
 
         delete this->RoundingSphere;
     }
+
+	virtual void isGettingDragged() { 
+		this->getsDragged = true; 
+	}
+
+	virtual void notDragging() { 
+			this->getsDragged = false; 
+	}
 
     virtual void render( void ) = 0;
 
@@ -275,7 +290,7 @@ public:
     {
         this->body->integrate( duration );
         this->calculateInternals();
-
+		//std::cout << "dicePos: " << this->body->getPosition().x << ", " << this->body->getPosition().y << ", " << this->body->getPosition().z << ", " << std::endl; 
         // Update the rounding sphere position
         this->RoundingSphere->body->setPosition( this->body->getPosition() );
     }
@@ -386,7 +401,7 @@ DiceDemo::DiceDemo( void )
 		this->m_Dices.push_back( d = new SixSidedDice() );
 		d->SetState( i, i*2, i );
 	}
-	for( int j = 0; j < 1; ++j )
+	for( int j = 0; j < 0; ++j )
 	{
 		this->m_Dices.push_back( d = new EightSidedDice() );
 		d->SetState( j, j*2, j );
@@ -459,7 +474,7 @@ void DiceDemo::Display( void )
 
 const char *DiceDemo::GetTitle()
 {
-    return "Dice Demo";
+    return "Playing with Dices";
 }
 
 void DiceDemo::InitGraphics( void )
@@ -475,51 +490,54 @@ void DiceDemo::InitGraphics( void )
     Application::InitGraphics();
 }
 
+// Check if we are selecting a dice
 void DiceDemo::Select( int x, int y )
-{  if(m_DragJoint==NULL){
-    GLdouble model[16], proj[16];
-    GLint view[4];
+{  
+	if(m_DragJoint==NULL){
+		GLdouble model[16], proj[16];
+		GLint view[4];
 
-    GLdouble oX, oY, oZ, eX, eY, eZ;
-	oX = oY = oZ = eX = eY = eZ = 0;
+		GLdouble oX, oY, oZ, eX, eY, eZ;
+		oX = oY = oZ = eX = eY = eZ = 0;
 
-    glGetDoublev( GL_MODELVIEW_MATRIX, model );
-    glGetDoublev( GL_PROJECTION_MATRIX, proj );
-    glGetIntegerv( GL_VIEWPORT, view );
+		glGetDoublev( GL_MODELVIEW_MATRIX, model );
+		glGetDoublev( GL_PROJECTION_MATRIX, proj );
+		glGetIntegerv( GL_VIEWPORT, view );
 
-    assert( gluUnProject( x, view[3] - y, 0.0, model, proj, view, &oX, &oY, &oZ ) != GLU_FALSE );
-    assert( gluUnProject( x, view[3] - y, 1.0, model, proj, view, &eX, &eY, &eZ ) != GLU_FALSE );
+		assert( gluUnProject( x, view[3] - y, 0.0, model, proj, view, &oX, &oY, &oZ ) != GLU_FALSE );
+		assert( gluUnProject( x, view[3] - y, 1.0, model, proj, view, &eX, &eY, &eZ ) != GLU_FALSE );
 
-    Ray r;
-	//r.o seems to be the original spot that's been clicked on.
-    r.o = cyclone::Vector3( oX, oY, oZ );
-	//r.d appears to keep track of the point selected after it's been dragged.eX - oX
-	r.d = cyclone::Vector3( eX - oX, eY - oY, eZ - oZ );
-	r.d.normalise();
+		Ray r;
+		//r.o seems to be the original spot that's been clicked on.
+		r.o = cyclone::Vector3( oX, oY, oZ );
+		//r.d appears to keep track of the point selected after it's been dragged.eX - oX
+		r.d = cyclone::Vector3( eX - oX, eY - oY, eZ - oZ );
+		r.d.normalise();
 
-    std::list<Dice*>::const_iterator it;
+		std::list<Dice*>::const_iterator it;
 
-	//Loops through all dices and checks which dice you have clicked.
-    for( it = this->m_Dices.begin() ; it != this->m_Dices.end() ; ++it )
-    {
-        if( RayBoxIntersection( r, *(*it), this->m_DragTime ) )
-        {
-            cyclone::Vector3 pos = r.o + r.d * this->m_DragTime;
-            cyclone::Vector3 bpos = (*it)->body->getPosition();
+		//Loops through all dices and checks which dice you have clicked.
+		for( it = this->m_Dices.begin() ; it != this->m_Dices.end() ; ++it )
+		{
+			if( RayBoxIntersection( r, *(*it), this->m_DragTime ) )
+			{
+				cyclone::Vector3 pos = r.o + r.d * this->m_DragTime;
+				cyclone::Vector3 bpos = (*it)->body->getPosition();
+				(*it).isGettingDragged();
 
-			this->m_IsDragging = true;
+				this->m_IsDragging = true;
 
-            this->m_DragDice = *it;
-			cyclone::PointJoint *p = new cyclone::PointJoint( (*it)->body, bpos - pos );
-            this->m_DragJoint = p;
+				this->m_DragDice = *it;
+				cyclone::PointJoint *p = new cyclone::PointJoint( (*it)->body, bpos - pos );
+				this->m_DragJoint = p;
 
-            break;
-        }
-    }
+				break;
+			}
+		}
+	}
 }
 
-}
-
+// Check if there is a usable mouse action 
 void DiceDemo::Mouse( int button, int state, int x, int y )
 {
     if( (button == GLUT_LEFT_BUTTON) && (state == GLUT_DOWN) )
@@ -564,6 +582,7 @@ void DiceDemo::MouseDrag( int x, int y )
 
 		cyclone::Vector3 pos = r.o + r.d * this->m_DragTime;
 		this->m_DragJoint->SetWorldPosition( pos );
+		//std::cout << "mousepos: " << pos.x << ", " << pos.y << ", " << pos.z << ", " << std::endl; 
 	}
 }
 
