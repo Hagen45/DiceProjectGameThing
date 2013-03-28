@@ -78,19 +78,6 @@ public:
         delete this->RoundingSphere;
     }
 
-    virtual void RenderShadow( void )
-    {
-        GLfloat mat[16];
-        body->getGLTransform( mat );
-
-        glPushMatrix();
-            glScalef( 1.0, 0, 1.0 );
-            glMultMatrixf( mat );
-            glScalef( halfSize.x * 2, halfSize.y * 2, halfSize.z * 2 );
-            glutSolidCube( 1.0f );
-        glPopMatrix();
-    }
-
     virtual void render( void ) = 0;
 
     virtual void Update( cyclone::real duration ) = 0;
@@ -462,17 +449,7 @@ void DiceDemo::Display( void )
         glVertex3f( 0, 0, 20 );
     glEnd();
 
-    // Render each shadow in turn
-    glEnable( GL_BLEND );
-        glColor4f( 0.0, 0.0, 0.0, 0.0f );
-        glDisable( GL_DEPTH_TEST );
-        glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA );
-        std::list<Dice*>::const_iterator it;
-        for( it = this->m_Dices.begin() ; it != this->m_Dices.end() ; ++it )
-        {
-            (*it)->RenderShadow();
-        }
-    glDisable( GL_BLEND );
+	std::list<Dice*>::const_iterator it;
 
     // Draw the dice
     glEnable( GL_DEPTH_TEST );
