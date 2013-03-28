@@ -119,8 +119,8 @@ public:
 	}
 
 	virtual void resetPosition(){
-	cyclone::Vector3 oldPosition;
-	cyclone::Vector3 newPosition;
+		cyclone::Vector3 oldPosition;
+		cyclone::Vector3 newPosition;
 	}
 
     virtual void render( void ) = 0;
@@ -236,19 +236,19 @@ public:
         }
 
 		float vData[12][3] = {
-			{0.000001, 0.000000, -1.000000},
-			{-0.999999, 0.000001, 0.000000},
-			{0.000001, -0.000000, 1.000000},
-			{1.000001, -0.000001, -0.000000},
-			{-0.000001, -1.000000, 0.000000},
-			{0.000001, 0.000000, 0.000000},
+			{0, 0, -1},
+			{-1, 0, 0},
+			{0, 0, 1},
+			{1, 0, 0},
+			{0, -1, 0},
+			{0, 0, 0},
 
-			{0.000000, 0.000000, -1.000000},
-			{1.000000, 0.000000, 0.000000},
-			{-0.000000, 0.000000, 1.000000},
-			{-1.000000, 0.000000, -0.000000},
-			{0.000000, 1.000000, 0.000000},
-			{0.000000, 0.000000, 0.000000},
+			{0, 0, -1},
+			{1, 0, 0},
+			{0, 0, 1},
+			{-1, 0, 0},
+			{0, 1, 0},
+			{0, 0, 0},
 		};
 
 		cyclone::Contact* contact = data->contacts;
@@ -435,7 +435,7 @@ DiceDemo::DiceDemo( void )
 		this->m_Dices.push_back( d = new SixSidedDice() );
 		d->SetState( i, i*2, i );
 	}
-	for( int j = 0; j < 0; ++j )
+	for( int j = 0; j < 1; ++j )
 	{
 		this->m_Dices.push_back( d = new EightSidedDice() );
 		d->SetState( j, j*2, j );
